@@ -11,7 +11,7 @@ CC = g++
 
 CFLAGS +=  -MMD -MP -O2 -g -fpic -Isrc -std=c++11 -Werror -Wall -I$(PULP_SDK_WS_INSTALL)/include
 
-LDFLAGS += -O2 -g -shared -Werror -Wall -L$(PULP_SDK_HOME)/install/ws/lib -Wl,--whole-archive -ljson -Wl,--no-whole-archive
+LDFLAGS += -O2 -g -shared -Werror -Wall -L$(PULP_SDK_WS_INSTALL)/lib -Wl,--whole-archive -ljson -Wl,--no-whole-archive
 
 ifdef VP_USE_SYSTEMC
 CFLAGS += -D__VP_USE_SYSTEMC -I$(SYSTEMC_HOME)/include

@@ -8,7 +8,7 @@ BUILD_DIR = $(ROOT_VP_BUILD_DIR)/launcher
 CC = g++
 
 CFLAGS +=  -MMD -MP -O2 -g -fpic -std=c++11 -Werror -Wall -I$(PULP_SDK_WS_INSTALL)/include
-LDFLAGS += -O2 -g -shared -Werror -Wall -L$(PULP_SDK_HOME)/install/ws/lib -Wl,--whole-archive -ljson -Wl,--no-whole-archive
+LDFLAGS += -O2 -g -shared -Werror -Wall -L$(PULP_SDK_WS_INSTALL)/lib -Wl,--whole-archive -ljson -Wl,--no-whole-archive
 
 LAUNCHER_SRCS = src/launcher.cpp
 LAUNCHER_OBJS = $(patsubst src/%.cpp,$(BUILD_DIR)/%.o,$(patsubst src/%.c,$(BUILD_DIR)/%.o,$(LAUNCHER_SRCS)))
